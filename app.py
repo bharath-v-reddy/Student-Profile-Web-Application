@@ -1,8 +1,8 @@
 import streamlit as st
 from groq import Groq
-st.set_page_config(page_title="Gnanesh N",page_icon="🥰", layout="centered")
-st.title("🎓 Student Profile Application")
-st.caption("Developed by: Gnanesh N")
+st.set_page_config(page_title="Student-Profile-Web-Application
+", layout=" centered")
+st.title("Student Profile Application")
 try:
   client=Groq(api_key=st.secrets["GROQ_API_KEY"])
 except (keyError, FileNotFoundError):
