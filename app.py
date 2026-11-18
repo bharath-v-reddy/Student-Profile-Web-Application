@@ -1,24 +1,39 @@
+
 import streamlit as st
-from groq import Groq
-st.set_page_config(page_title="Student-Profile-Web-Application
-", layout=" centered")
+
+st.set_page_config(
+    page_title="Student Profile Web Application",
+    layout="centered"
+)
+
 st.title("Student Profile Application")
-try:
-  client=Groq(api_key=st.secrets["GROQ_API_KEY"])
-except (keyError, FileNotFoundError):
-  st.error("API key is missing. addit in advanced settings")
-  st.stop()
-name=st.text_area("Student Name", "Enter Your Name")
-usn=st.text_area("USN / Roll no.", "Enter your USN")
-dept=st.text_area("Department", "Enter Your Department")
-year=st.radio("Current Year",["1st year","2nd Year","3rd Year","4th Year"])
-btn=st.button("View My Profile")
+st.caption("Enter your details to create your student profile.")
+
+# Student Details
+name = st.text_input("Student Name", placeholder="Enter Your Name")
+
+usn = st.text_input("USN / Roll No.", placeholder="Enter Your USN")
+
+dept = st.text_input("Department", placeholder="Enter Your Department")
+
+year = st.radio(
+    "Current Year",
+    ["1st Year", "2nd Year", "3rd Year", "4th Year"]
+)
+
+# Button
+btn = st.button("View My Profile")
+
 if btn:
-    st.success("Profile Created Successfully!")
+    if name and usn and dept:
+        st.success("Profile Created Successfully!")
 
-    st.subheader("🎓 Student Profile Details")
+        st.subheader("🎓 Student Profile Details")
 
-    st.write("**Student Name:**", name)
-    st.write("**USN / Roll No.:**", usn)
-    st.write("**Department:**", dept)
-    st.write("**Current Year:**", year)
+        st.write("**Student Name:**", name)
+        st.write("**USN / Roll No.:**", usn)
+        st.write("**Department:**", dept)
+        st.write("**Current Year:**", year)
+
+    else:
+        st.warning("Please fill in all the details.")
