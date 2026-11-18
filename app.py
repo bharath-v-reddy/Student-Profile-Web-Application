@@ -28,7 +28,7 @@ if btn:
     if name and usn and dept:
         st.success("Profile Created Successfully!")
 
-        st.subheader("🎓 Student Profile Details")
+        st.subheader("Student Profile Details")
 
         st.write("**Student Name:**", name)
         st.write("**USN / Roll No.:**", usn)
