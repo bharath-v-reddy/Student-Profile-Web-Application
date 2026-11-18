@@ -51,12 +51,12 @@ with st.form("student_form"):
 
     name = st.text_input(
         "Student Name",
-        placeholder="Enter your name"
+        placeholder="Bharath V Reddy"
     )
 
     usn = st.text_input(
         "USN / Roll Number",
-        placeholder="Enter roll number"
+        placeholder="1SV24CS024"
     )
 
     department = st.selectbox(
